@@ -22,10 +22,11 @@ class Stack
 end
 
 # demo_stack = Stack.new
-# p demo_stack.push("First task")
-# p demo_stack.push("Second task")
-# p demo_stack.push("Third task")
-
+# p demo_stack
+#  demo_stack.push("First task")
+#  demo_stack.push("Second task")
+#  demo_stack.push("Third task")
+# p demo_stack.inspect
 # p demo_stack.peek
 # p demo_stack.pop
 # p demo_stack.peek
@@ -113,3 +114,32 @@ end
 
 # p demo_map.delete("a")
 # p demo_map.show
+require "byebug"
+class Node
+
+    attr_reader :value
+    def initialize(value, children=[])
+        @value = value
+        @children = children
+    end
+
+
+    def dfs(target=nil, &prc)
+        prc ||= Proc.new {|node| node.value == target}
+        return self if prc.call(self)
+
+        @children.each do |child|
+            result = child.dfs(&prc)
+            return result unless result.nil?
+        end
+        nil
+    end
+
+end
+
+
+b = Node.new("b")
+c = Node.new("c")
+a = Node.new("a", [b, c])
+debugger
+p a.dfs("b")
