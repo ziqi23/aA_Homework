@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 38px
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.ingredients-list {
+    list-style: square inside;
+}
+
+.cooking-directions {
+    list-style: circle inside;
+    background-color: lightgray;
+}
+
+header > img {
+    width: 100px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    background-color: rgb(172, 166, 166)
+}
+
+[type="radio"] {
+    cursor:pointer;
+    outline:none;
+    -webkit-appearance: none;
+    background: url('assets/stars.png');
+  }
+  
+  [type="submit"] {
+    cursor:pointer;
+    outline:none;
+  }
+  
+  [type="select"] {
+    cursor:pointer;
+    outline:none;
+  }
+
+[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+.user_review {
+    border: solid 1px black;
+}
+
+
